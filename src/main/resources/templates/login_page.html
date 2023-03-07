@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <title>RGS login</title>
+</head>
+<body>
+<div class="container my-5">
+<form action="#" method="post" th:action="@{processLogin}" th:object="${loginModel}">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <!-- login -->
+    <div class="form-floating">
+        <input th:field="*{username}" type="text" class="form-control" id="username" placeholder="username"> <!-- th:field="*{username}" -->
+        <label for="username">Username</label>
+        <p class="alert alert-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username error!</p>
+    </div>
+
+    <!-- password -->
+    <div class="form-floating">
+        <input th:field="*{password}" type="text" class="form-control" id="password" placeholder="password"> <!-- th:field="*{password}" -->
+        <label for="password">Password</label>
+        <p class="alert alert-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error!</p>
+    </div>
+
+    <!-- button -->
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+    <p class="mt-5 mb-3 text-muted">&copy; powered by RosogiSoft</p>
+</form>
+</div>
+</body>
+</html>

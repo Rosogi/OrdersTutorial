@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <title>RGS</title>
+</head>
+<body>
+
+<div class="container" th:object="${loginModel}">
+    <p>Username: <span th:text="*{username}"/></p>
+    <p>Password: <span th:text="*{password}"/></p>
+</div>
+
+</body>
+</html>
