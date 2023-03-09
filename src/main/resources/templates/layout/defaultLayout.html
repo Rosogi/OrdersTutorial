@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
     <title>RGS login</title>
 </head>
 <body>
 <!-- header -->
-<div th:replace = "layout/commonHeader :: header">My header will go here</div>
+<div th:replace = "~{layout/commonHeader :: header}">My header will go here</div>
 
 <!-- content -->
 <section layout:fragment="content">
@@ -15,7 +17,7 @@
 </section>
 
 <!-- footer -->
-<div th:replace = "layout/commonFooter :: footer">My footer will go here</div>
+<div th:replace = "~{layout/commonFooter :: footer}">My footer will go here</div>
 <script src = "/js/bootstrap.bundle.js"></script>
 </body>
 <html/>
