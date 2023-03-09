@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <title>RGS login</title>
-</head>
+<html layout:decorate="layout/defaultLayout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <body>
-<div class="container my-5">
+
+<div class="container my-5" layout:fragment="content">
 <form action="#" method="post" th:action="@{processLogin}" th:object="${loginModel}">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
@@ -28,6 +24,7 @@
     <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
     <p class="mt-5 mb-3 text-muted">&copy; powered by RosogiSoft</p>
 </form>
+
 </div>
 </body>
 </html>

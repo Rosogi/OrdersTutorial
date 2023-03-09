@@ -1,14 +1,12 @@
 package com.rosogisoft.loginverification.controllers;
 
 import com.rosogisoft.loginverification.models.LoginModel;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.validation.Valid;
-
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -20,7 +18,7 @@ public class LoginController {
     }
 
     @PostMapping("/processLogin")
-    public String processLogin(@Valid LoginModel loginModel, BindingResult bindingResult,  Model model){
+    public String processLogin(@Valid LoginModel loginModel, BindingResult bindingResult, Model model){
         if (bindingResult.hasErrors()){
             model.addAttribute("loginModel", loginModel);
             return "login_page.html";

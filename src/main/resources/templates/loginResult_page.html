@@ -1,13 +1,8 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <title>RGS</title>
-</head>
+<html layout:decorate="layout/defaultLayout" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <body>
 
-<div class="container" th:object="${loginModel}">
+<div class="container" th:object="${loginModel}" layout:fragment="content">
     <p>Username: <span th:text="*{username}"/></p>
     <p>Password: <span th:text="*{password}"/></p>
 </div>
