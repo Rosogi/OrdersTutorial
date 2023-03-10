@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderBusinessService2 implements OrderBusinessServiceInterface {
-
+    List<OrderModel> orders;
     @Override
     public void test() {
         System.out.println("OrderBusinessService is working!");
@@ -16,7 +16,7 @@ public class OrderBusinessService2 implements OrderBusinessServiceInterface {
 
     @Override
     public List<OrderModel> getOrders() {
-        List<OrderModel> orders = new ArrayList<>();
+
 
         orders.add(new OrderModel(0L, "AAA", "Big Mac", 3.0f, 1));
         orders.add(new OrderModel(1L, "AAB", "French fries", 2.50f, 1));
@@ -30,5 +30,16 @@ public class OrderBusinessService2 implements OrderBusinessServiceInterface {
         orders.add(new OrderModel(9L, "AAJ", "Soda", 2.0f, 1));
 
         return orders;
+    }
+
+    @Override
+    public void init() {
+        System.out.println("Init method of the OrderBusinessService 2");
+        orders = new ArrayList<OrderModel>();
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("Destroy method of the OrderBusinessService 2");
     }
 }

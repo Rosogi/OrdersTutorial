@@ -32,4 +32,14 @@ public class OrderBusinessService implements OrderBusinessServiceInterface {
 
         return orders;
     }
+
+    @Override
+    public void init() {
+        System.out.println("Init method of the OrderBusinessService");
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("Destroy method of the OrderBusinessService1");
+    }
 }
