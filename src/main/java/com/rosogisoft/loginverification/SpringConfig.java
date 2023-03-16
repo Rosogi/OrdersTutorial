@@ -1,5 +1,7 @@
 package com.rosogisoft.loginverification;
 
+import com.rosogisoft.loginverification.data.OrderDataAccessInterface;
+import com.rosogisoft.loginverification.data.OrdersDataService;
 import com.rosogisoft.loginverification.services.OrderBusinessService;
 import com.rosogisoft.loginverification.services.OrderBusinessServiceInterface;
 import org.springframework.context.annotation.Bean;
@@ -12,5 +14,11 @@ public class SpringConfig {
     @RequestScope
     public OrderBusinessServiceInterface getOrdersBusiness(){
         return new OrderBusinessService();
+    }
+
+    @Bean(name = "ordersDAO")
+    @RequestScope
+    public OrderDataAccessInterface getDataAccessService(){
+        return new OrdersDataService();
     }
 }
