@@ -1,7 +1,11 @@
 package com.rosogisoft.loginverification.models;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class OrderModel {
     Long id = 0L;
+    @NotNull(message = "")
     String orderNo = "";
     String productName = "";
     float price = 0;
@@ -13,6 +17,9 @@ public class OrderModel {
         this.productName = productName;
         this.price = price;
         this.quantity = quantity;
+    }
+
+    public OrderModel() {
     }
 
     public Long getId() {

@@ -78,7 +78,8 @@ public class OrdersDataService implements OrderDataAccessInterface{
                 updateOrder.getOrderNo(),
                 updateOrder.getProductName(),
                 updateOrder.getPrice(),
-                updateOrder.getQuantity(), idToUpdate);
+                updateOrder.getQuantity(),
+                idToUpdate);
         if (result > 0){
             return updateOrder;
         } else {

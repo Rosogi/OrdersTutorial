@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html layout:decorate="layout/defaultLayout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container my-5 mt-2 mb-1" layout:fragment="content">
+  <form th:action="@{/orders/search}" method="post" th:object="${searchModel}">
+    <div class="mb-3">
+      <label for="searchInput" class="form-label">Search for</label>
+      <input th:field="*{searchTerm}" type="text" class="form-control" id="searchInput" aria-describedby="searchHelp">
+      <div id="searchHelp" class="form-text">Search by product name</div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+  </div>
+</body>
+</html>

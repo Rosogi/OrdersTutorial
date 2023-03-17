@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html layout:decorate="layout/defaultLayout"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container my-5 mt-2 mb-1" layout:fragment="content">
+    <form th:action="@{/orders/addNew}" method="post" th:object="${order}">
+        <div class="mb-3">
+            <label for="orderNumberInput" class="form-label">Order number</label>
+            <input th:field="*{orderNo}" type="text" class="form-control" id="orderNumberInput" aria-describedby="orderNumberHelp">
+            <div id="orderNumberHelp" class="form-text">Invent a number for this order</div>
+        </div>
+        <div class="mb-3">
+            <label for="orderProductNameInput" class="form-label">Order product name</label>
+            <input th:field="*{productName}" type="text" class="form-control" id="orderProductNameInput" aria-describedby="orderProductNameHelp">
+            <div id="orderProductNameHelp" class="forms-text">Type a product name for your product</div>
+        </div>
+        <div class="mb-3">
+            <label for="orderPriceInput" class="form-label">Order price</label>
+            <input th:field="*{price}" type="text" class="form-control" id="orderPriceInput" aria-describedby="orderPriceHelp">
+            <div id="orderPriceHelp" class="form-text">Select a price</div>
+        </div>
+        <div class="mb-3">
+            <label for="orderQuantityInput" class="form-label">Order quantity</label>
+            <input th:field="*{quantity}" type="text" class="form-control" id="orderQuantityInput" aria-describedby="orderQuantityHelp">
+            <div id="orderQuantityHelp" class="form-text">Type a quantity in one shipment</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
